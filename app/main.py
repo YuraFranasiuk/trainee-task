@@ -29,7 +29,7 @@ def create_user(data: schemas.UserCreate, db: Session=Depends(get_db)):
         raise HTTPException(status_code=400, 
                             detail='username already registered')
 
-    if username_exist:
+    if email_exist:
         raise HTTPException(status_code=400, 
                             detail='email already registered')
     
